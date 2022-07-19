@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct APIToken {
+public struct APIToken {
   let tokenType: String
   let expiresIn: Int
   let accessToken: String
@@ -24,7 +24,7 @@ extension APIToken: Codable {
 }
 
 // MARK: - Helper properties
-extension APIToken {
+public extension APIToken {
   var expiresAt: Date {
     Calendar.current.date(byAdding: .second, value: expiresIn, to: requestedAt) ?? Date()
   }
